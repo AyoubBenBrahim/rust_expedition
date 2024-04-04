@@ -23,22 +23,19 @@ pub fn run() {
   // Get vector length
   println!("Vector Length: {}", numbers.len());
 
-  // Vectors are heap allocated
-  println!("Vector occupies {} bytes", mem::size_of_val(&numbers));
-
   // Get Slice
   let slice: &[i32] = &numbers[1..3];
   println!("Slice: {:?}", slice);
-
+  
   // Loop through vector values
+  println!("============");
+
   for x in numbers.iter() {
-    println!("Number: {}", x);
+    println!("nbr: {}", x);
   }
 
-  // Loop & mutate values
-  for x in numbers.iter_mut() {
-    *x *= 2;
-  }
+  println!("============");
+
 
   println!("Numbers Vec: {:?}", numbers);
 }

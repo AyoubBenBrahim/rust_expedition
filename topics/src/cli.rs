@@ -1,4 +1,4 @@
-/*
+
 use std::env;
 
 pub fn run() {
@@ -16,9 +16,4 @@ pub fn run() {
   } else {
     println!("That is not a valid command");
   }
-}
-*/
-
-pub fn run() {
-    println!("That is not a valid command");
 }

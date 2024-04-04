@@ -4,14 +4,14 @@ pub fn run() {
   let mut count = 0;
 
   // Infinite Loop
-  // loop {
-  //   count += 1;
-  //   println!("Number: {}", count);
+  loop {
+    count += 1;
+    println!("Number: {}", count);
 
-  //   if count == 20 {
-  //     break;
-  //   }
-  // }
+    if count == 20 {
+      break;
+    }
+  }
 
   // While Loop (FizzBuzz)
   // while count <= 100 {
@@ -30,7 +30,7 @@ pub fn run() {
   // }
 
   // For Range
-  for x in 0..100 {
+  for x in 0..15 {
     if x % 15 == 0 {
       println!("fizzbuzz");
     } else if x % 3 == 0 {
@@ -41,4 +41,5 @@ pub fn run() {
       println!("{}", x);
     }
   }
+
 }

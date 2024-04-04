@@ -3,10 +3,10 @@
 use std::mem;
 
 pub fn run() {
-  let mut numbers: [i32; 4] = [1, 2, 3, 4];
+  let mut numbers: [i32; 5] = [0, 1, 2, 3, 4];
 
   // Re-assign value
-  numbers[2] = 20;
+  numbers[4] = 40;
 
   println!("{:?}", numbers);
 
@@ -20,6 +20,28 @@ pub fn run() {
   println!("Array occupies {} bytes", mem::size_of_val(&numbers));
 
   // Get Slice
-  let slice: &[i32] = &numbers[1..3];
+  let slice: &[i32] = &numbers[1..4]; // 0..N is exclusive of the last index (0 to N-1)
   println!("Slice: {:?}", slice);
+
+  println!("======rev======");
+  for x in numbers.iter().rev() {
+    println!("Number: {}", x);
+  }
+
+  println!("=====mut=======");
+  for x in numbers.iter_mut() {
+    *x *= 2;
+  }
+
+   for x in numbers.iter() {
+    println!("Number: {}", x);
+  }
+
+  println!("============");
+
+  // iter from 2 to 4
+  for x in numbers[1..4].iter() {
+    println!("Number: {}", x);
+  }
+
 }

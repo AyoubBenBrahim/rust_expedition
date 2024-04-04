@@ -49,4 +49,18 @@ println!("{}", owned_string);
 // Using str (string slice)
 let borrowed_string: &str = "a string slice";
 println!("{}", borrowed_string); // Output: "hello"
+
+
+
+let str1 = "hello";
+let str2 = "hello";
+
+if str1.eq(str2) {
+    println!("Strings are equal");
+} else {
+    println!("Strings are not equal");
+}
+
+
+
 }
