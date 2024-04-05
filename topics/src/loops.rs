@@ -14,15 +14,8 @@ pub fn run() {
   }
 
   // While Loop (FizzBuzz)
-  // while count <= 100 {
-  //   if count % 15 == 0 {
-  //     println!("fizzbuzz");
-  //   } else if count % 3 == 0 {
-  //     println!("fizz");
-  //   } else if count % 5 == 0 {
-  //     println!("buzz")
-  //   } else {
-  //     println!("{}", count);
+  // while count <= 7 {
+    // println!("Number: {}", count);
   //   }
 
   //   // Inc
@@ -30,16 +23,15 @@ pub fn run() {
   // }
 
   // For Range
-  for x in 0..15 {
-    if x % 15 == 0 {
-      println!("fizzbuzz");
-    } else if x % 3 == 0 {
-      println!("fizz");
-    } else if x % 5 == 0 {
-      println!("buzz")
-    } else {
-      println!("{}", x);
+  // for x in 0..15 {
+  //   println!("Number: {}", x);
+  // }
+
+  let fruits = vec!["orange", "apple", "mango"];
+    
+    // Enumerate: An iterator that yields the current count and the element during iteration.
+    for (index, i) in fruits.iter().enumerate(){
+        println!("Fruit number {} is {}", index, i);
     }
-  }
 
 }
