@@ -2,7 +2,7 @@
 // mod vars;
 // mod types;
 // mod strings;
-mod tuples;
+// mod tuples;
 // mod arrays;
 // mod vectors;
 // mod conditionals;
@@ -13,13 +13,14 @@ mod tuples;
 // mod enums;
 // mod cli;
 // mod constants;
+mod imple;
 
 fn main() {
     // print::run();
     // vars::run();
     // types::run();
     // strings::run();
-    tuples::run();
+    // tuples::run();
     // arrays::run();
     // vectors::run();
     // conditionals::run();
@@ -30,4 +31,5 @@ fn main() {
     // enums::run();
     // cli::run();
     // constants::run();
+    imple::run();
 }
