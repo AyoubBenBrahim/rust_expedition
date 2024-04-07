@@ -17,10 +17,6 @@ async fn echo(req_body: String) -> impl Responder {
     )
 }
 
-async fn manual_hello() -> impl Responder {
-    HttpResponse::Ok().body("Hey there!")
-}
-
 // Define a handler for non-existing routes
 async fn not_found() -> HttpResponse {
     HttpResponse::NotFound().json(json!({
