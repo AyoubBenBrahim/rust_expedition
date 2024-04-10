@@ -1,5 +1,9 @@
 
-GET http://localhost:4444/db_con HTTP/1.1
+GET http://localhost:4444/not_exist HTTP/1.1
+
+###
+
+GET http://localhost:4444/hello HTTP/1.1
 
 ###
 
@@ -7,5 +11,20 @@ GET http://localhost:4444/users
 
 ###
 
-GET http://localhost:4444/users/11
+GET http://localhost:4444/users/8
+
+###
+
+POST http://localhost:4444/users
+Content-Type: application/json
+
+{
+    "id": 11111,
+    "username": "FooBaz8",
+    "email": "jhon@gmail.com8"
+}
+
+###
+
+DELETE http://localhost:4444/users/8
 

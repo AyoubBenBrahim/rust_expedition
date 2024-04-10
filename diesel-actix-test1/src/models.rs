@@ -3,7 +3,7 @@ use diesel::{ Queryable, Insertable, Selectable };
 use crate::schema::users;
 use serde::{Deserialize, Serialize};
 
-#[derive(Queryable, Selectable, Serialize, Deserialize)]
+#[derive(Queryable, Selectable, Serialize, Deserialize, Debug, Insertable)]
 #[diesel(table_name = crate::schema::users)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
 pub struct User {
@@ -12,7 +12,8 @@ pub struct User {
     pub email: String,
 }
 
-#[derive(Insertable)]
+// no longer needed with the api part
+#[derive(Insertable, Serialize, Deserialize, Debug)]
 #[diesel(table_name = users)]
 pub struct NewUser {
     pub username: String,
