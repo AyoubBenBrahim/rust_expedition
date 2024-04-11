@@ -108,7 +108,7 @@ mod handlers {
                     last_id = id_ + 1;
                 },
                 Err(_) => {
-                    last_id = 0;
+                    last_id = 1;
                 }
             }
 

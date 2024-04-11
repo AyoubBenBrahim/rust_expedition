@@ -20,11 +20,11 @@ Content-Type: application/json
 
 {
     "id": 11111,
-    "username": "FooBaz8",
-    "email": "jhon@gmail.com8"
+    "username": "FooBaz2",
+    "email": "jhon@gmail.com2"
 }
 
 ###
 
-DELETE http://localhost:4444/users/8
+DELETE http://localhost:4444/users/1
 
