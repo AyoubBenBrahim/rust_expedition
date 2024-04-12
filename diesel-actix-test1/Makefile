@@ -11,11 +11,25 @@ migrate: init
 # edit migration file
 	cp ./up.sql ./migrations/*_create_users/up.sql
 
-run_migrate:
 # run migration
+run_migrate:
 	diesel migration run
 
-run:
+#run on ur machine export SECRET_KEY=$(make generate_key)
+generate_key:
+	@openssl rand -base64 64
+
+print:
+	@echo $$SECRET_KEY
+
+encrypt:
+	@openssl enc -aes-256-cbc -pbkdf2 -k "$$SECRET_KEY" -in ".env" -out "encrypted.env"
+
+decrypt:
+	@echo "Decrypting .env file..."
+	@./decrypt.sh
+
+run: docker-up decrypt
 	cargo run
 
 watch:
@@ -33,7 +47,6 @@ list_dbs:
 list_tables:
 	docker exec -it $(CONTAINER_NAME) psql -U $(POSTGRES_USER) -c "\dt"
 
-# passed via cammad line
 table_schema:
 	@if [ -z "$(TBL)" ]; then echo "Usage: make table_schema TBL=table_name" && exit 1; fi
 	docker exec -it $(CONTAINER_NAME) psql -U $(POSTGRES_USER) -c "\d $(TBL)"
