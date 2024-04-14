@@ -43,6 +43,8 @@ pub fn run() {
   let mixedTuple = ("Smith", "Laura", true, 5.2, 100, 'x', (10,20,30));
   println!("first value of nested tuple is {}, the second is {}, and the third is {}", (mixedTuple.6).0, (mixedTuple.6).1, (mixedTuple.6).2 );
 
+
+
 }
 
 

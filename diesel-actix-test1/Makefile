@@ -29,17 +29,24 @@ decrypt:
 	@echo "Decrypting .env file..."
 	@./decrypt.sh
 
-run: docker-up decrypt
+run: decrypt
 	cargo run
 
 watch:
 	cargo watch -x 'run'
 
+# Docker commands
+
 docker-up:
 	docker-compose up -d
 
 docker-down: 
-	docker-compose down
+	docker-compose down --remove-orphans
+
+docker-inspect:
+	@docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(CONTAINER_NAME)
+
+# Postgres commands
 
 list_dbs:
 	docker exec -it $(CONTAINER_NAME) psql -U $(POSTGRES_USER) -c "\l"

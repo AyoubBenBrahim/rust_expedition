@@ -160,11 +160,12 @@ mod handlers {
         }
     }
 
-    pub async fn hello_test() -> impl Responder
+    pub async fn health() -> HttpResponse
     {
-        HttpResponse::Ok().body(
-            format!("Hello, the GET works")
-        )
+        HttpResponse::Ok().json(json!({
+            "status": "ok",
+            "message": "Server is running"
+        }))
     }
 
     pub async fn not_found() -> HttpResponse {
@@ -179,12 +180,12 @@ mod handlers {
 
 // Routes
 mod routes {
-    use crate::handlers::{create_user, hello_test, get_user_by_id, get_users, del_user_by_id};
+    use crate::handlers::{create_user, health, get_user_by_id, get_users, del_user_by_id};
 
     use actix_web::web;
 
     pub fn configure(cfg: &mut web::ServiceConfig) {
-        cfg.route("/hello", web::get().to(hello_test));
+        cfg.route("/health", web::get().to(health));
         cfg.route("/users", web::get().to(get_users));
         cfg.route("/users/{user_id}", web::get().to(get_user_by_id));
         cfg.route("/users", web::post().to(create_user));
