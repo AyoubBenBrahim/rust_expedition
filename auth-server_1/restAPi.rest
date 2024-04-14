@@ -1,0 +1,38 @@
+
+GET http://localhost:8080/api/not_exist HTTP/1.1
+
+###
+
+GET http://localhost:8080/api/health
+
+###
+
+GET http://localhost:8080/api/users
+
+###
+
+GET http://localhost:8080/api/users/8
+
+###
+
+POST http://localhost:8080/api/invitation
+Content-Type: application/json
+
+{
+    "email": "Taaa@gmail.com"
+}
+
+###
+
+POST http://localhost:8080/api/register/dcbe717f-34c5-485d-b500-4274130c809f
+Content-Type: application/json
+
+{
+   "email":"Taaa@gmail.com",
+   "password":"pass123"
+}
+
+###
+
+DELETE http://localhost:8080/api/users/1
+
