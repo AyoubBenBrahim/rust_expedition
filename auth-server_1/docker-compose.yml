@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  db_postgres:
+  auth-server:
     container_name: ${CONTAINER_NAME}
     image: postgres
     env_file:
